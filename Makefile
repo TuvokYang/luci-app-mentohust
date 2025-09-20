@@ -6,8 +6,6 @@ PKG_RELEASE:=0
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
-LUCI_DEPENDS:=+luci-base +mentohust
-
 include $(INCLUDE_DIR)/package.mk
 
 define Package/luci-app-mentohust
@@ -15,6 +13,7 @@ define Package/luci-app-mentohust
 	CATEGORY:=LuCI
 	SUBMENU:=3. Applications
 	TITLE:=MentoHUST 802.1X Client for LuCI
+	DEPENDS:=+luci-base +luci-lua-runtime mentohust
 	PKGARCH:=all
 endef
 
